@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task1</title>
+    <script>
+
+        function Addition() {
+            var a = document.getElementById("text1").value;
+            var b = document.getElementById("text2").value;
+            var c = Number(a) +Number (b);
+            document.getElementById("add").innerHTML = "addition:" +c;
+        }
+
+        function substraction(){
+            var a = document.getElementById("task1").value;
+            var b = document.getElementById("task2").value;
+            var c = Number(a) - Number(b);
+            document.getElementById("sub").innerHTML="substraction:" +c;
+        }
+        function multiplication(){
+            var a = document.getElementById("num3").value;
+            var b = document.getElementById("num4").value;
+            var c = Number(a) * Number(b);
+            document.getElementById("mul").innerHTML="multiplication:" +c;
+        }
+    </script>
+
+</head>
+
+<body>
+    <div>
+        <div>
+            <label>Num1</label>
+            <input type="text" id="text1"> 
+        </div><br>
+        <div>
+            <label>Num2</label>
+            <input type="text" id="text2">
+        </div>
+        <button onclick="Addition()">add</button>
+        <h3 id="add"></h3>
+
+        <button onclick="substraction()">SUB</button>
+        <h3 id="sub"></h3>
+
+        <!-- <div>
+            <label>Num1</label>
+            <input type="text" id="num1"> 
+        </div>
+        <div>
+            <label>Num2</label>
+            <input type="text" id="num2">
+        </div>
+        <button onclick="substraction()">sub</button>
+        <h3 id="sub"></h3>
+
+        <div>
+            <label>Num1</label>
+            <input type="text" id="num3"> 
+        </div>
+        <div>
+            <label>Num2</label>
+            <input type="text" id="num4">
+        </div>
+        <button onclick="multiplication()">mul</button>
+        <h3 id="mul"></h3> -->
+    </div>
+</body>
+
+</html>

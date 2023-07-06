@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>javascriptlecture1</title>
+    <script> 
+        document.write("Welcome to javascript");
+        function display(){
+            document.write("Welcome")
+            document.write(" to")
+            document.write(" ciit")
+            document.write(" institute")
+        }
+
+        function show(){
+            document.getElementById("msg").innerHTML="Welcome to first java script lecture";
+        }
+
+        function addition(){
+            var a = 10;
+            var b = 20;
+            var c = a + b;
+            document.getElementById("add").innerHTML="Addition="+c;
+        }
+       
+    </script>
+
+
+
+
+</head>
+<body>
+
+    <input type="button" value="submit" onclick="display()">
+    <br>
+
+    <input type="button" value="click" onclick="show()">
+    <div id="msg"></div>
+    <br>
+
+
+    <button onclick="addition()">add</button>
+    <h3 id="add"></h3>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript lecture2</title>
+    <script>
+
+        // var a=10;
+        // var b=20;
+        // if(a>b){
+        //     document.write("a is greater");
+        // }
+        // else if(a==b){
+        //     document.write("both are equals")
+        // }
+        // else{
+        //     document.write("b is greater");
+        // }
+
+
+        function compare(){
+            var a=document.getElementById("num1").value;
+            var b=document.getElementById("num2").value;
+            if(a>b){
+                document.write("a is greater");
+            }
+            else if(a==b){
+                document.write("Both are equals");
+            }
+            else{
+                document.write("b is greater")
+            }
+        }
+
+            // string compare program
+        function compare(){
+           var a = "Machindra";
+           var b = "mayur"
+           if(a.length == b.length){
+            document.write("string are equals");
+           }
+           else{
+            document.write("string are not equals");
+           }
+        }
+
+        compare();
+        
+    </script>
+</head>
+<body>
+
+    <div>
+        <label>Number1</label>
+        <input type="text" id="num1">
+        <label>Number2</label>
+        <input type="text" id="num2">
+    </div>
+    <button onclick="compare()">submit</button>
+
+
+
+</body>
+</html>

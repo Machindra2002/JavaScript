@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript lecture 5</title>
+    <script>
+        // print reverse number 
+        /*
+        var sum = 0;
+        var rem = 0;
+        var n = 123;
+        while(n>0){
+            rem = n % 10;
+            sum = rem + (sum * 10);
+            n = Math.floor(n/10);
+        }                                   
+        document.write(sum);                            
+                                            123/10=  3  
+                                            3/10 =  3   2  1
+                                           
+        */
+
+        // check number is palindrom
+        /*
+        sum = 0;
+        rem = 0;
+        var n = 222;
+        var temp;
+        temp = n;
+        while (n != 0) {
+            rem = n % 10;
+            sum = rem + (sum * 10);
+            n = Math.floor(n / 10);
+            // document.write(sum);
+        }
+        if (temp == sum) {
+            document.write("Number is palindrom");
+        }
+        else {
+            document.write("number is not palindrom");
+        }
+        */
+
+        // check no is amstrong
+        /*
+        var sum = 0;
+        var rem = 0;
+        var n = 124;
+        var temp = n;
+        while(n!= 0){
+            rem =  (n % 10);
+            sum = sum  + (rem * rem * rem);
+            n = Math.floor(n / 10)
+        }    
+        if (sum == temp) {
+            document.write("number is amstrong");
+        }
+        else {
+            document.write("number is not amstrong");
+        }
+        */
+
+        
+        
+
+
+        var n = 2345;
+        var sum = 0;
+        var temp = 0;
+        while(n!=0){
+            temp = n % 10;
+            sum = temp + (sum * 10);
+            n = Math.floor(n / 10);
+        }
+        document.write(sum);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

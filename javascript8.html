@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript array lecture</title>
+    <script>
+        // give the user input and add the cities in aaray
+        /*
+        var cities = [];
+        function AddCity() {
+            var c = document.getElementById("txt").value;
+            cities.push(c);
+            Display();
+        }
+
+        function Display() {
+            var data = " ";
+            for (i = 0; i < cities.length; i++) {
+                data += "<li>" + cities[i] + "</li>";
+            }
+            document.getElementById("mydata").innerHTML = data;
+        }
+        */
+
+
+        // remove city an array
+        var city = [];
+        function AddCity() {
+            alert();
+            var c = document.getElementById("txt1").value;
+            city.push(c);
+            Display();
+        }
+
+
+        function Display() {
+            var add = "";
+            for (i = 0; i < city.length; i++) {
+                add += "<li>" + city[i] + "<input type='button' value='x' onclick='remove(" + i + ")'/>" + "</li>";
+            }
+            document.getElementById("mydata").innerHTML= add;
+        }
+            function remove(r){
+                alert("city remove successfully...");
+                city.splice(r,1);
+                Display();
+            }
+
+    </script>
+</head>
+
+<body>
+   
+    city : <input type="text" id="txt1"><br><br>
+    <button onclick="AddCity()">submit</button>
+    <hr>
+    <h3 id="mydata"></h3>
+
+
+</body>
+
+</html>

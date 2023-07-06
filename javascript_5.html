@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>while loop lecture</title>
+    <script>
+        //  document.write("print 1 to 10 number");
+        //  var n = 1;
+        //  while(n<=10){
+        //     document.write(n + "<br/>")
+        //     n++;
+        //  }
+
+        //  document.write("print 1 to 10 reverse number <br/>");
+        //  var n = 10;
+        //  while(n>=1){
+        //     document.write(n + "<br/>");
+        //     n--;
+        //  }
+
+
+
+        // var n = Number.parseInt(prompt("Enter your number"));
+        // var cnt = 0;
+        // while (n > 0) {
+        //     cnt++;
+        //     n = Math.floor(n / 10);
+        // }
+        // document.write("Total count is:" + cnt);
+
+        function digit() {
+            var n = Number.parseInt(document.getElementById("num1").value);
+            var cnt = 0;
+            while (n > 0){
+                cnt++;
+                n = Math.floor(n / 10);
+            }
+            // document.write("Total count is:" + cnt);
+            document.getElementById("count").innerHTML="total count is:"+cnt;
+        }
+
+    </script>
+</head>
+
+<body>
+
+    Enter Your Number:<input type="text" id="num1"><br>
+    <button id="btn" onclick="digit()">submit</button><hr>
+    <h3 id="count"></h3>
+</body>
+
+</html>

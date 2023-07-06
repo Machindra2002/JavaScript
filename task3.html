@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>task3</title>
+    <script>
+        function calculate(){
+            var e = Number(document.getElementById("text1").value);
+            var m = Number(document.getElementById("text2").value);
+            var s = Number(document.getElementById("text3").value);
+
+            var total = e+m+s;
+            var percentage =total / 3;
+            var result = "";
+            
+            if(percentage<35){
+                result="student are fail";
+            }
+            else if(percentage>=35 && percentage<=100){
+                result="student are pass";
+            }
+            else if(percentage>100){
+                result="invalid input";
+            }
+        
+            document.getElementById("total").innerHTML="Total Marks Obtain="+total;
+            document.getElementById("per").innerHTML="percentage="+percentage;
+            document.getElementById("res").innerHTML="result="+result;
+        }
+
+
+    </script>
+</head>
+<body>
+    
+    <div>
+        <div>
+        <label>English</label>
+        <input type="text" id="text1">
+    </div><br>
+    <div>
+        <label>Maths</label>
+        <input type="text" id="text2">
+    </div><br>
+    <div>
+        <label>Science</label>
+        <input type="text" id="text3">
+    </div><br>
+    </div>
+    <input type="button" value="calculate" onclick="calculate()">
+    <hr>
+    <h3 id="total"></h3>
+    <h3 id="per"></h3>
+    <h3 id="res"></h3>
+</body>
+</html>

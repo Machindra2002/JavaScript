@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>task2</title>
+    <script>
+
+        function student() {
+            var e =Number(document.getElementById("num1").value);
+            var m = Number(document.getElementById("num2").value);
+            var s = Number(document.getElementById("num3").value);
+            var total = e + m + s;
+            var per = total / 3;
+            var result = "";
+
+
+            if (per <= 50) {
+                result="fail";
+            }
+            else {
+                result="pass"
+            }
+
+            document.getElementById("total").innerHTML = "Total Marks=" + total;
+            document.getElementById("per").innerHTML = "percentage=" + per;
+            document.getElementById("result").innerHTML = "Total marks=" + result;
+
+        }
+    </script>
+
+
+
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td>English</td>
+            <td><input type="text" id="num1"></td>
+        </tr>
+        <tr>
+            <td>Maths</td>
+            <td><input type="text" id="num2"></td>
+        </tr>
+        <tr>
+            <td>Science</td>
+            <td><input type="text" id="num3"></td>
+        </tr>
+
+        <tr>
+            <td>
+                <input type="button" value="calculate" onclick="student()">
+            </td>
+        </tr>
+    </table>
+    <hr>
+   <h2 id="total"></h2>
+   <h2 id="per"></h2>
+   <h2 id="result"></h2>
+
+
+
+</body>
+
+</html>

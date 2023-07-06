@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task4</title>
+    
+    <script>
+        function task(){
+            var e = Number(document.getElementById("eng").value);
+            var m = Number(document.getElementById("math").value);
+            var s = Number(document.getElementById("sci").value);
+
+            var total = e+m+s;
+            var per = total/3;
+            var gread = "";
+            var col="";
+
+             if(per<=35){
+                gread="D";
+                col="red";
+             }
+             else if(per>35 && per<=50){
+                gread ="C";
+                col="orange";
+             }
+             else if(per>51 && per<=75){
+                gread="B";
+                col="pink";
+             }
+             else if(per>76 && per<=100){ 
+                gread="A";
+                col="green";
+             }
+             else{
+                gread="invalid input";
+             }
+
+             document.getElementById("total").value=total;
+             document.getElementById("per").value=per;
+             document.getElementById("gre").value=gread;
+             document.getElementById("gre").style.backgroundColor=col;
+        }
+    </script>
+</head>
+<body>
+    <div>
+    English: <input type="text" id="eng" onchange="task()">
+    Maths: <input type="text" id="math" onchange="task()">
+    Science: <input type="text" id="sci" onchange="task()">
+</div>
+<br>
+<div>
+    Total: <input type="text" id="total">
+    percentage: <input type="text" id="per">
+    gread: <input type="text" id="gre">
+</div>
+</body>
+</html>

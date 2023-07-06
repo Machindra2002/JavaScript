@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>data functions</title>
+    <script>
+        /*
+        var dt = new Date();
+        // document.write(dt);
+        document.write("<h1>" + dt + "</h1>");
+
+       document.write("<h1>" + dt.toString() + "</h1>");    
+       document.write("<h1>" + dt.toLocaleDateString() + "</h1>");    
+       document.write("<h1>" + dt.toLocaleTimeString() + "</h1>");    
+       document.write("<h1>" + dt.getYear() + "</h1>");    
+       document.write("<h1>" + dt.getFullYear() + "</h1>");    
+       document.write("<h1>" + dt.getMonth() + "</h1>");    
+       document.write("<h1>" + (Number(dt.getMonth()+1)) + "</h1>");    
+       document.write("<h1>" + dt.getMonth() + "</h1>");    
+       document.write("<h1>" + dt.getHours() + "</h1>");    
+       document.write("<h1>" + dt.getMinutes() + "</h1>");    
+        */
+
+        function cal(){
+            var sdt = document.getElementById("start").value;
+            var edt = document.getElementById("end").value;
+
+            var st = new Date(sdt);
+            var et = new Date(edt);
+
+            var diff = ((et-st)/1000/60/60)/24;
+
+            document.getElementById("mydata").innerHTML = diff;
+
+        }
+
+
+
+
+
+
+
+
+
+    </script>
+</head>
+<body>
+    
+    <div>
+        start_Date: <input type="date" id="start"/>
+    </div>
+    <div>
+        end_Date: <input type="date" id="end"/>
+    </div>
+
+    <div>
+        <button onclick="cal()">submit</button>
+    </div>
+    <h3 id="mydata"></h3>
+
+
+    
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>square</title>
+    <script>
+        function click(){
+            var a = Number(document.getElementById("num1").value);
+            var b = Number(document.getElementById("num2").value);
+            var total = a + b;
+            var square = total*total;
+            var cube = total*total*total;
+            document.getElementById("total").value=total;
+            document.getElementById("btn1").innerHTML="Square of give Number is:"+square;
+            document.getElementById("btn2").innerHTML="cube of give Number is:"+cube;
+        }
+    </script>
+</head>
+<body>
+
+    <div>
+        Num1: <input type="text" id="num1" onchange="click()">
+        Num2: <input type="text" id="num2" onchange="click()">
+    </div>
+    <br>
+    <div>
+        Total: <input type="text" id="total">
+    </div>
+    <br>
+    <div>
+        <input type="button" value="submit" onclick="click()">
+    </div>
+    <hr>
+
+    <div>
+        square <input type="radio" name="radio">
+        cube <input type="radio" name="radio">
+    </div>
+    <h3 id="btn1"></h3>
+    <h3 id="btn2"></h3>
+    <br>
+
+</body>
+</html>

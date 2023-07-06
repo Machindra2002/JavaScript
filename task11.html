@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GRUD operation</title>
+    <script>
+        var std = [];
+        function Student() {
+            roll_no = Number(document.getElementById("r_no").value);
+            std_name = document.getElementById("s_name").value;
+            English = Number(document.getElementById("eng").value);
+            Maths = Number(document.getElementById("math").value);
+            Science = Number(document.getElementById("sci").value);
+            Total = English + Maths + Science;
+            per = Total / 3;
+            Grade = "";
+            if (per <= 35) {
+                Grade = "D";
+            }
+            else if (per >= 36 && per <= 50) {
+                Grade = "C";
+            }
+            else if (Per >= 51 && per <= 65) {
+                Grade = "C+";
+            }
+            else if (per >= 66 && per <= 75) {
+                Grade = "B";
+            }
+            else if (per >= 76 && per <= 90) {
+                Grade = "A";
+            }
+            else if (per >= 91 && per <= 100) {
+                Grade = "A+";
+            }
+            else {
+                document.write("your enter marks is invalid");
+            }
+
+            var obj = {
+                "roll_no": roll_no,
+                "std_name": std_name,
+                "eng_marks": English,
+                "math_marks": Maths,
+                "sci_marks": Science,
+                "total": Total,
+                "per": per,
+                "grade": Grade,
+            }
+            std.push(obj);
+            Display();
+
+            document.getElementById("r_no").value="";
+            document.getElementById("s_name").value="";
+            document.getElementById("eng").value="";
+            document.getElementById("math").value="";
+            document.getElementById("sci").value="";
+            document.getElementById("tot").value="";
+            document.getElementById("per").value="";
+            document.getElementById("grd").value="";
+        }
+
+        function Display() {
+            var data = "";
+            for (i = 0; i < std.length; i++) {
+                data += "<tr><td>" + std[i].roll_no +
+                    "</td><td>" + std[i].std_name +
+                    "</td><td>" + std[i].eng_marks +
+                    "</td><td>" + std[i].math_marks +
+                    "</td><td>" + std[i].sci_marks +
+                    "</td><td>" + std[i].total +
+                    "</td><td>" + std[i].per +
+                    "</td><td>" + std[i].grade +
+                    "</td><td>" + "<button onclick='remove(" + i + ")'>x</button>" +
+                    "<button onclick='view(" + i + ")'>view</button>" + "</td></tr>"
+            }
+            document.getElementById("stdinfo").innerHTML = data;
+        }
+
+        function greads() {
+
+            English = Number(document.getElementById("eng").value);
+            Maths = Number(document.getElementById("math").value);
+            Science = Number(document.getElementById("sci").value);
+            Total = English + Maths + Science;
+            per = Total / 3;
+            Grade = "";
+
+            if (per <= 35) {
+                Grade = "D";
+            }
+            else if (per >= 36 && per <= 50) {
+                Grade = "C";
+            }
+            else if (per >= 51 && per <= 65) {
+                Grade = "C+";
+            }
+            else if (per >= 66 && per <= 75) {
+                Grade = "B";
+            }
+            else if (per >= 76 && per <= 90) {
+                Grade = "A";
+            }
+            else if (per >= 91 && per <= 100) {
+                Grade = "A+";
+            }
+            else {
+                document.write("your enter marks is invalid");
+            }
+            document.getElementById("tot").value = Total;
+            document.getElementById("per").value = per;
+            document.getElementById("grd").value = Grade;
+        }
+
+        function remove(r) {
+            alert("student information remove successful...")
+            std.splice(r, 1);
+            Display();
+        }
+
+        function view(v) {
+            index = v;
+            var obj = std[v];
+
+            document.getElementById("r_no").value = obj.roll_no;
+            document.getElementById("s_name").value = obj.std_name;
+            document.getElementById("eng").value = obj.eng_marks;
+            document.getElementById("math").value = obj.math_marks;
+            document.getElementById("sci").value = obj.sci_marks;
+            document.getElementById("tot").value = obj.total;
+            document.getElementById("per").value = obj.per;
+            document.getElementById("grd").value = obj.grade;
+            Total = English + Maths + Science;
+            per = Total / 3;
+            Grade = "";
+
+        }
+
+        function UpdateStdInfo() {
+
+            roll_no = document.getElementById("r_no").value;
+            std_name = document.getElementById("s_name").value;
+            English = document.getElementById("eng").value;
+            Maths = document.getElementById("math").value;
+            Science =document.getElementById("sci").value;
+            Total = English + Maths + Science;
+            per = Total / 3;
+            Grade = "";
+            
+            var obj = {
+                "roll_no": roll_no,
+                "std_name": std_name,
+                "eng_marks": English,
+                "math_marks": Maths,
+                "sci_marks": Science,
+                "total": Total,
+                "per": per,
+                "grade": Grade
+            }
+            std[index] = obj;
+            Display();
+        }
+
+
+
+    </script>
+</head>
+
+<body>
+
+    <table border="2">
+        <thead>
+            <tr>
+                <td>Roll No</td>
+                <td><input type="text" id="r_no"></td>
+            </tr>
+            <tr>
+                <td>S_Name</td>
+                <td><input type="text" id="s_name"></td>
+            </tr>
+            <tr>
+                <td>English</td>
+                <td><input type="text" id="eng" onchange="greads()"></td>
+            </tr>
+            <tr>
+                <td>Maths</td>
+                <td><input type="text" id="math" onchange="greads()"></td>
+            </tr>
+            <tr>
+                <td>Science</td>
+                <td><input type="text" id="sci" onchange="greads()"></td>
+            </tr>
+            <tr>
+                <td>Total</td>
+                <td><input type="text" id="tot"></td>
+            </tr>
+            <tr>
+                <td>Percentage</td>
+                <td><input type="text" id="per"></td>
+            </tr>
+            <tr>
+                <td>Grade</td>
+                <td><input type="text" id="grd"></td>
+            </tr>
+        </thead>
+    </table>
+    <br>
+
+    <div>
+        <input type="button" value="submit" onclick="Student()" />
+        <input type="button" value="update" onclick="UpdateStdInfo()" />
+    </div>
+
+    <hr>
+    <table border="1">
+        <thead>
+            <th>Roll No</th>
+            <th>Std_Name</th>
+            <th>English</th>
+            <th>Maths</th>
+            <th>Science</th>
+            <th>Total</th>
+            <th>Percentage</th>
+            <th>Grade</th>
+            <th>Action</th>
+        </thead>
+
+        <tbody id="stdinfo"></tbody>
+
+    </table>
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

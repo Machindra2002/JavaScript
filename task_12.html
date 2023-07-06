@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>data_time task</title>
+    <script>
+        var arr = [];
+        function cal() {
+            var sdt = document.getElementById("start").value;
+            var edt = document.getElementById("end").value;
+            var rest_Time = document.getElementById("r_t").value;
+            var Rate_Hours = document.getElementById("r_h").value;
+
+            var st = new Date("09 30 2022 " + sdt);
+            var et = new Date("09 30 2022 " + edt);
+            var diff = (et - st) / 1000 / 60;
+            var Total_Duration = diff - rest_Time;
+
+            var Total_Amount = (Total_Duration / 60) * Rate_Hours;
+            document.getElementById("t_a").value = Total_Amount;
+
+            var h = Math.floor(diff / 60);
+            var m = Math.floor(diff % 60);
+            var Total_Duration = document.getElementById("t_d").value = h + ":" + m;
+
+        }
+
+        function change() {
+            var sdt = document.getElementById("start").value;
+            var edt = document.getElementById("end").value;
+            var rest_Time = document.getElementById("r_t").value;
+            var Rate_Hours = document.getElementById("r_h").value;
+            var Total_Duration = document.getElementById("t_d").value;
+            var Total_Amount = document.getElementById("t_a").value;
+
+            var obj = {
+                "sdt": sdt,
+                "edt": edt,
+                "rest_time": rest_Time,
+                "Rate_Hours": Rate_Hours,
+                "Total_Duration": Total_Duration,
+                "Total_Amount": Total_Amount
+            }
+            arr.push(obj);
+            Display();
+        }
+
+
+
+
+        function Display() {
+            var data = "";
+            for (i = 0; i < arr.length; i++) {
+                data += "<tr><td>" + arr[i].sdt +
+                    "</td><td>" + arr[i].edt +
+                    "</td><td>" + arr[i].rest_time +
+                    "</td><td>" + arr[i].Rate_Hours +
+                    "</td><td>" + arr[i].Total_Duration +
+                    "</td><td>" + arr[i].Total_Amount + "</td></tr>"
+            }
+
+            document.getElementById("mydata").innerHTML = data;
+        }
+
+
+
+
+
+
+
+
+
+
+    </script>
+</head>
+
+<body>
+
+    <div>
+        start_Time: <input type="time" id="start" />
+    </div>
+    <div>
+        end_Time: <input type="time" id="end" />
+    </div>
+    <div>
+        rest_Time: <input type="txt" id="r_t" />
+    </div>
+    <div>
+        Rate_Hours: <input type="txt" id="r_h" onchange="cal()" />
+    </div>
+    <div>
+        Total_Duration: <input type="txt" id="t_d" />
+    </div>
+    <div>
+        Total_Amount: <input type="text" id="t_a" />
+    </div>
+    <div>
+        <button onclick="change()">submit</button>
+    </div>
+
+    <table border="2">
+        <thead>
+            <tr>
+                <th>start_Time</th>
+                <th>end_Time</th>
+                <th>rest_Time</th>
+                <th>Rate_Hours</th>
+                <th>Total_Duration</th>
+                <th>Total_Amount</th>
+            </tr>
+        <tbody id="mydata">
+
+        </tbody>
+        </thead>
+
+
+
+
+
+
+    </table>
+
+
+
+
+
+
+
+
+</body>
+
+</html>

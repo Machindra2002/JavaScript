@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task 10</title>
+    <script>
+        var arr = [];
+        var stock = 100;
+
+        function task() {
+            var p = document.getElementById("product").value;
+            var q = document.getElementById("quantity").value;
+            var r = document.getElementById("rate").value;
+            var stock = stock - q;
+            var T_A = q * r;
+            
+            if(stock>0 && stock<=100){ 
+                Add();
+            }
+            else{
+                // document.write("out of stock or stock is not available");
+                alert("out of stock or stock is not available");
+            }
+        }
+
+        function Add(){
+            var p = document.getElementById("product").value;
+            var q = document.getElementById("quantity").value;
+            var r = document.getElementById("rate").value;
+            var Available_Stock = document.getElementById("Available_Stock").value;
+            var Total_Amount= document.getElementById("Total_Amount").value;
+
+            var obj = {
+                "product": p,
+                "quantity": q,
+                "rate": r,
+                "Available_Stock":Available_Stock,
+                "Total_Amount": Total_Amount,
+            };
+            arr.push(obj);
+            Display();
+        }
+
+        function Display() {
+            var data = "";
+            for (i = 0; i < arr.length; i++) {
+                data +=
+                    "<tr><td>" + arr[i].product +
+                    "</td><td>" + arr[i].quantity +
+                    "</td><td>" + arr[i].rate +
+                    "</td><td>" + arr[i].Available_Stock +
+                    "</td><td>" + arr[i].Total_Amount +
+                    "</td></tr>"
+            }
+
+            document.getElementById("mydata").innerHTML = data;
+        }
+
+        // function change(){
+        //     var p = document.getElementById("product").value;
+        //     var q = document.getElementById("quantity").value;
+        //     var r = document.getElementById("rate").value;
+        //     var A_S = stock - q;
+        //     var T_A = q * r;
+
+        //     if(stock > 0 ){
+        //         stock = A_S - q;
+        //     }
+        //     else if(A_S<0 && q<0){
+        //         document.write("out of stock or stock is not available");
+        //     }
+        //     else if(A_S >= 100 && q > 100 ){
+        //         document.write("invalid input");
+        //     }
+           
+
+        //     change();
+        //     document.getElementById("Available_Stock").value = A_S;
+        //     document.getElementById("Total_Amount").value = T_A;
+        // }
+
+
+
+
+
+
+
+    </script>
+</head>
+
+<body>
+    <div>
+        Product Name: <select id="product">
+            <option value="pencile">pencile</option>
+            <option value="pen">pen</option>
+            <option value="rubber">rubber</option>
+        </select>
+    </div><br>
+    <div>
+        Quantity: <input type="text" id="quantity"  onchange="task()">
+    </div><br>
+    <div>
+        Rate: <input type="text" id="rate">
+    </div><br>
+    <div>
+        Avaliable Stock: <input type="text" id="Available_Stock">
+    </div><br>
+    <div>
+        Total Amount: <input type="text" id="Total_Amount">
+    </div>
+    <br>
+    <div>
+        <button onclick="task()"> submit </button>
+    </div>
+
+    <hr>
+
+
+    <table border="1" >
+        <thead>
+            <tr>
+                <td>Product Name</td>
+                <td>Quantity</td>
+                <td>Rate</td>
+                <td> Avaliable Stock</td>
+                <td>Total Amount</td>
+            </tr>
+        </thead>
+
+        <tbody id="mydata"></tbody>
+
+
+    </table>
+
+
+
+
+</body>
+
+</html>

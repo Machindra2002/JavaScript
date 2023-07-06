@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON</title>
+    <script>
+        var std = [];
+        function AddStd() {
+            var r = document.getElementById("txt1").value;
+            var n = document.getElementById("txt2").value;
+            var p = Number.parseInt(document.getElementById("txt3").value);
+            var m = Number.parseInt(document.getElementById("txt4").value);
+            var c = Number.parseInt(document.getElementById("txt5").value);
+            var total = p + m + c;
+            var per = total / 3;
+            var gread = "";
+
+            if (per < 35) {
+                gread = "D";
+            }
+            else if (per >= 35 && per < 50) {
+                gread = "C";
+            }
+            else if (per >= 51 && per < 75) {
+                gread = "B";
+            }
+            else if (per >= 76 && per <= 100) {
+                gread = "A";
+            }
+            else {
+                gread = "Invalid Input";
+            }
+
+            var obj = {
+                "roll_no": r,
+                "s_name": n,
+                "physics": p,
+                "Maths": m,
+                "Chemistry": c,
+                "total": total,
+                "percentage": per,
+                "gread": gread
+            };
+
+            std.push(obj);
+            Display();
+        }
+
+        function Display() {
+            var data = "";
+            for (i = 0; i < std.length; i++) {
+                data += "<tr><td>" + std[i].roll_no +
+                    "</td><td>" + std[i].s_name +
+                    "</td><td>" + std[i].physics +
+                    "</td><td>" + std[i].Maths +
+                    "</td><td>" + std[i].Chemistry +
+                    "</td><td>" + std[i].total +
+                    "</td><td>" + std[i].percentage +
+                    "</td><td>" + std[i].gread + "</td></tr>";
+            }
+            document.getElementById("tdldata").innerHTML = data;
+        }
+    </script>
+</head>
+
+<body>
+
+
+    <div>
+        <div>
+            Roll No: <input type="text" id="txt1">
+        </div>
+        <br>
+        <div>
+            Name: <input type="text" id="txt2">
+        </div>
+        <br>
+        <div>
+            Physics: <input type="text" id="txt3">
+        </div>
+        <br>
+        <div>
+            Maths: <input type="text" id="txt4">
+        </div>
+        <br>
+        <div>
+            Chemistry: <input type="text" id="txt5">
+        </div>
+        <br>
+        <div>
+            <button onclick="AddStd()">submit</button>
+        </div>
+        <hr>
+    </div>
+
+    <div>
+        <table border="1">
+            <thead>
+                <tr>
+                    <td>Roll No</td>
+                    <td>student Name</td>
+                    <td>Physics</td>
+                    <td>Maths</td>
+                    <td>Chemistry</td>
+                    <td>total</td>
+                    <td>percentage</td>
+                    <td>gread</td>
+                </tr>
+            </thead>
+
+            <tbody id="tdldata"></tbody>
+        </table>
+
+
+
+
+
+    </div>
+
+
+</body>
+
+</html>

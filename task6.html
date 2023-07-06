@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task6</title>
+
+    <script>
+
+        // document.write("program to print even no with green color & odd no with red");
+        // for(i=1; i<=10; i++){
+        //     if(i%2==0){
+        //         document.write( "<h1 style='color:green'>" + i + "</h1>");
+        //     }
+        //     if(i%2==0){
+        //         // document.write("print odd number <br/>");
+        //         document.write( "<h1 style='color:red'>" + (i+1) + "</h1>");
+        //     }
+        // }
+
+        // document.write("program to sum of first 10 Number");
+        // var sum=0;
+        // for(i=1; i<=10; i++){
+        //     sum= (sum+i);
+        // }
+        // document.write(" <h1> sum of first 10 number is: <h1/>" + sum);
+
+        // document.write("program to give the user input & print the number to click the submit button");
+        function clickk() {
+            var start_loop = Number(document.getElementById("num1").value);
+            var end_loop = Number(document.getElementById("num2").value);
+            var increment = Number(document.getElementById("num3").value);
+            var data = "";
+            for (i = start_loop; i <= end_loop; i = i + increment) {
+                data += i;
+            }
+            document.getElementById("start").innerHTML = + data;
+        }
+
+    </script>
+</head>
+
+<body>
+
+    <div>
+        start Loop: <input type="text" id="num1"><br />
+        end Loop: <input type="text" id="num2"><br />
+        increment: <input type="text" id="num3"><br />
+        <input type="button" value="submit" onclick="clickk()">
+        <hr>
+        <h3 id="start"></h3>
+    </div>
+
+</body>
+
+</html>

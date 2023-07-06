@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GRUD operation</title>
+    <script>
+        var arr = [];
+        function Emplyoee() {
+            var e_id = document.getElementById("txt1").value;
+            var e_name = document.getElementById("txt2").value;
+            var designation = document.getElementById("txt3").value;
+            var salary = document.getElementById("txt4").value;
+            // var x = "";
+
+            var obj = {
+                "e_id": e_id,
+                "e_name": e_name,
+                "designation": designation,
+                "salary": salary,
+                // "x":x
+            }
+
+            arr.push(obj);
+            Display();
+
+            document.getElementById("txt1").value="";
+            document.getElementById("txt2").value="";
+            document.getElementById("txt3").value="";
+            document.getElementById("txt4").value="";
+        }
+
+        function Display() {
+
+            var data = "";
+            for (i = 0; i < arr.length; i++) {
+                data +=
+                    "<tr><td>" + arr[i].e_id +
+                    "</td><td>" + arr[i].e_name +
+                    "</td><td>" + arr[i].designation +
+                    "</td><td>" + arr[i].salary +
+                    "</td><td>" + "<button onclick='remove("+i+")'>x</button>"
+                        + "<button onclick='viewemployee("+i+")'>view</button>"+ 
+                    "</td></tr>"
+            }
+            document.getElementById("tdlbody").innerHTML =  data;
+        }
+
+        function remove(r){
+            alert("value successfuly deleted...")
+            arr.splice(r,1)
+            Display();
+        }
+        function viewemployee(v){
+            index = v;
+            var obj = arr[v];
+            document.getElementById("txt1").value = obj.e_id;
+            document.getElementById("txt2").value = obj.e_name;
+            document.getElementById("txt3").value = obj.designation;
+            document.getElementById("txt4").value = obj.salary;
+        }
+
+
+        function UpdateEmplyoee(){
+            var e_id = document.getElementById("txt1").value;
+            var e_name = document.getElementById("txt2").value;
+            var designation = document.getElementById("txt3").value;
+            var salary = document.getElementById("txt4").value;
+            var x = "";
+
+            var obj = {
+                "e_id": e_id,
+                "e_name": e_name,
+                "designation": designation,
+                "salary": salary,
+                "x":x
+            }
+            arr[index]=obj;
+            Display();
+        }
+    </script>
+</head>
+
+<body>
+    <table border="1">
+        <thead>
+            <tr>
+                <td>Emp_Id:</td>
+                <td><input type="text" id="txt1"></td>
+            </tr>
+            <tr>
+                <td>Emp_Name:</td>
+                <td><input type="text" id="txt2"></td>
+            </tr>
+            <tr>
+                <td>Designation:</td>
+                <td> <select id="txt3">
+                        <option value="Manager">Manager</option>
+                        <option value="Software Developer">Software Developer</option>
+                        <option value="Software Tester">Software Tester</option>
+                    </select></td>
+            </tr>
+            <tr>
+                <td>Salary:</td>
+                <td><input type="text" id="txt4"></td>
+            </tr>
+        </thead>
+    </table>
+    <br>
+    <div>
+        <input type="button" value="submit" onclick="Emplyoee()"/>
+        <input type="button" value="Update" onclick="UpdateEmplyoee()"/>
+    </div>
+    <hr>
+    <hr/>
+    <table border="1">
+        <thead>
+            <tr>
+                <td>Emp_Id</td>
+                <td>Emp_Name</td>
+                <td>Designation</td>
+                <td> Salary</td>
+                <td> Action</td>
+            </tr>
+        </thead>
+
+        <tbody id="tdlbody"></tbody>
+
+
+    </table>
+
+
+
+
+
+
+
+</body>
+
+</html>

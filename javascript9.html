@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>json in javascript</title>
+    <script>
+        /*
+        var a = [{"roll_no":1, "s_name":"Machindra"},
+                {"roll_no":2, "s_name": "Mayur"},
+                {"roll_no":3, "s_name": "Tejas"},
+                {"roll_no":4, "s_name": "Suraj"}
+                ]
+
+            for(i =0; i<a.length; i++){
+                document.write( a[i].roll_no +"." + a[i].s_name + " " );
+            }
+            */
+        function student() {
+            var a = [{ "r_no": 1, "s_name": "Machindra" },
+            { "r_no": 2, "s_name": "Mayur" },
+            { "r_no": 3, "s_name": "Tejas" },
+            { "r_no": 4, "s_name": "Shubham" }];
+
+            for (i = 0; i < a.length; i++) {
+                document.getElementById("tbldata").innerHTML += "<tr><td>" + a[i].r_no + "</td> <td>" + a[i].s_name + "</td> </tr>"
+            }
+        }
+         
+
+       
+    </script>
+</head>
+
+<body onload="student()">
+
+    <table border="1">
+        <thead>
+            <tr>
+                <td>Roll_No</td>
+                <td>S_Name</td>
+            </tr>
+        </thead>
+
+        <tbody id="tbldata"></tbody>
+    </table>
+
+
+
+
+</body>
+
+</html>

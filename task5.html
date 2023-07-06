@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task5</title>
+    <script>
+        function square() {
+            var a = Number(document.getElementById("num1").value);
+            var b = Number(document.getElementById("num2").value);
+            var total = a + b;
+            var square = total * total;
+            var cube = total * total * total;
+
+            document.getElementById("total").value = total;
+            document.getElementById("btn1").innerHTML = "Square of give Number is:" + square;
+            document.getElementById("btn2").innerHTML = "cube of give Number is:" + cube;
+            
+        }
+
+
+
+    </script>
+
+
+</head>
+
+<body>
+
+    <div>
+        Num1: <input type="text" id="num1" onchange="square()">
+        Num2: <input type="text" id="num2" onchange="square()">
+    </div>
+    <br>
+    <div>
+        Total: <input type="text" id="total">
+    </div>
+    <br>
+    <div>
+        <input type="button" value="submit" onclick="square()">
+    </div>
+    <hr>
+
+    <div>
+        square <input type="radio" name="radio" id="sq">
+        cube <input type="radio" name="radio" id="cub">
+    </div>
+    <h3 id="start"></h3>
+    <h3 id="btn1"></h3>
+    <h3 id="btn2"></h3>
+    <br>
+</body>
+
+</html>

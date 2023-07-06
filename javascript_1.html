@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>task1</title>
+    <script>
+        function addition(){
+            var a = 10;
+            var b = 20;
+            var c = a + b;
+            document.getElementById("add").innerHTML="Addition="+c;
+        }
+        function substraction() {
+            var a = 100;
+            var b = 50;
+            var c = a-b;
+            document.getElementById("sub").innerHTML="Substraction="+ c;
+        }
+        function multipication() {
+            var p = 100;
+            var q = 50;
+            var r = p*q;
+            document.getElementById("mutil").innerHTML="multiplication="+ r;
+        }
+        function division() {
+            var a = 100;
+            var b = 50;
+            var c = a/b;
+            document.getElementById("div").innerHTML="division="+c;
+        }
+        
+
+    </script>
+</head>
+
+<body>
+    <button onclick="addition()">add</button>
+    <h3 id="add"></h3>
+    <button onclick="substraction()">sub</button>
+    <h3 id="sub"></h3>
+    <button onclick="multipication()">multi</button>
+    <h3 id="mutil"></h3>
+    <button onclick="division()">div</button>
+    <h3 id="div"></h3>
+</body>
+
+</html>

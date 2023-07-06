@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript 10</title>
+    <script>
+        var arr = [];
+        function AddStd() {
+            var r = document.getElementById("txt1").value;
+            var n = document.getElementById("txt2").value;
+            var e = Number.parseInt(document.getElementById("txt3").value);
+            var m = Number.parseInt(document.getElementById("txt4").value);
+            var s = Number.parseInt(document.getElementById("txt5").value);
+            var Total = e + m + s;
+            var per = Total / 3;
+            var Grade = "";
+
+            if (per < 35) {
+                Grade = "D";
+            }
+            else if (per >= 35 && per <= 50) {
+                Grade = "C";
+            }
+            else if (per >= 51 && per <= 75) {
+                Grade = "B";
+            }
+            else if (per >= 76 && per <= 100) {
+                Grade = "A";
+            }
+            else {
+                Grade = " invalid input";
+            }
+
+            var obj = {
+                "roll_no": r,
+                "s_name": n,
+                "english": e,
+                "Maths": m,
+                "Science": s,
+                "Total": Total,
+                "per": per,
+                "Grade": Grade
+            };
+
+            arr.push(obj);
+            Display();
+        }
+
+
+
+        function Display() {
+            var data = "";
+            for (i = 0; i < arr.length; i++) {
+                data += "<tr><td>" + arr[i].roll_no +
+                    "</td><td>" + arr[i].s_name +
+                    "</td><td>" + arr[i].english +
+                    "</td><td>" + arr[i].Maths +
+                    "</td><td>" + arr[i].Science +
+                    "</td><td>" + arr[i].Total +
+                    "</td><td>" + arr[i].per +
+                    "</td><td>" + arr[i].Grade + "</td></tr>";
+            }
+            document.getElementById("tdldata").innerHTML = data;
+
+        }
+
+        function cal() {
+            var e = Number(document.getElementById("txt3").value);
+            var m = Number(document.getElementById("txt4").value);
+            var s = Number(document.getElementById("txt5").value);
+            var Total = e + m + s;
+            var per = Total / 3;
+            var Grade = "";
+
+            if (per < 35) {
+                Grade = "D";
+            }
+            else if (per >= 35 && per <= 50) {
+                Grade = "C";
+            }
+            else if (per >= 51 && per <= 75) {
+                Grade = "B";
+            }
+            else if (per >= 76 && per <= 100) {
+                Grade = "A";
+            }
+            else {
+                Grade = " invalid input";
+            }
+            
+            document.getElementById("total").value = Total;
+            document.getElementById("per").value = per;
+            document.getElementById("grd").value = Grade;
+
+            Display();
+        }
+
+
+
+
+
+    </script>
+</head>
+
+<body>
+
+    <div>
+        <div>
+            Roll_NO: <input type="text" id="txt1">
+        </div><br>
+        <div>
+            Name: <input type="text" id="txt2">
+        </div>
+        <div>
+            English: <input type="text" id="txt3" onchange="cal()">
+        </div><br>
+        <div>
+            Maths: <input type="text" id="txt4" onchange="cal()">
+        </div><br>
+        <div>
+            Science: <input type="text" id="txt5" onchange="cal()">
+        </div><br>
+        <div>
+            Total: <input type="text" id="total">
+        </div><br>
+        <div>
+            per: <input type="text" id="per">
+        </div><br>
+        <div>
+            Grade: <input type="text" id="grd">
+        </div>
+    </div>
+    <div>
+        <button onclick="AddStd()">submit</button>
+    </div>
+
+    <hr>
+
+
+    <div>
+        <table border="1">
+            <thead>
+                <tr>
+                    <td>Roll No</td>
+                    <td>student_Name</td>
+                    <td>English</td>
+                    <td>Maths</td>
+                    <td>Science</td>
+                    <td>Total</td>
+                    <td>per</td>
+                    <td>Grade</td>
+                </tr>
+            </thead>
+
+            <tbody id="tdldata"></tbody>
+        </table>
+
+
+
+
+
+    </div>
+
+
+
+</body>
+
+</html>

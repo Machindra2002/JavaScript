@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task_6</title>
+
+    <script>
+        function userinput(){
+            var num1 = Number(document.getElementById("txt1").value);
+            var num2 = Number(document.getElementById("txt2").value);
+            var num3 = Number(document.getElementById("txt3").value);
+            var data="";
+
+            for(i=num1; i<=num2; i=i+num3){
+                data= data+i;
+            }
+            document.getElementById("start").innerHTML="Data Show <br/>="+data;
+        }
+    </script>
+
+</head>
+<body>
+     <div>
+        <table>
+            <tr>
+                <td>Number1</td>
+                <td><input type="text" id="txt1"></td>
+            </tr>
+            <tr>
+                <td>Number2</td>
+                <td><input type="text" id="txt2"></td>
+            </tr>
+            <tr>
+                <td>Increament</td>
+                <td><input type="text" id="txt3"></td>
+            </tr>
+        </table>
+        <button onclick="userinput()">submit</button><hr>
+        <h3 id="start"></h3>
+     </div>
+
+
+
+</body>
+</html>

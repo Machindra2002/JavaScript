@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>validation</title>
+    <script>
+        
+        function cal() {
+            var status = true;
+            var n = document.forms["customerform"]["txt1"].value;
+            if (n == "") {
+                status = false;
+                document.getElementById("spncont").innerHTML = "please enter Mobile Number";
+                return false;
+            }
+            else {
+                var num = /^([6-9]{1})([0-9]{9})$/;
+                if (!n.match(num)) {
+                    status = false;
+                    document.getElementById("spncont").innerHTML = "only no is allowed $ first no start in bteween  6 to 9";
+                    return false;
+                }
+                else {
+                    status = true;
+                    document.getElementById("spncont").innerHTML = "";
+                }
+            }
+            var n = document.forms["customerform"]["txt1"].value="";
+            
+            
+            var email = document.forms["customerform"]["txt2"].value;
+            if(email == ""){
+                status = false
+                document.getElementById("spnemail").innerHTML="please enter email";
+            }
+            else{
+                var emailpattern = /^([a-z0-9]+[@](gmail.)(com))$/;
+                if(!email.match(emailpattern)){
+                    status = false;
+                    document.getElementById("spnemail").innerHTML="please enter valid email";
+                }
+                else{
+                    status = true;
+                    document.getElementById("spnemail").innerHTML="";
+                }
+            }
+            var email = document.forms["customerform"]["txt2"].value="";
+            
+            return status;
+            
+        }
+
+
+
+
+
+
+    </script>
+</head>
+
+<body>
+    <form name="customerform"  method="get" action="task11.html" onsubmit="return cal()">
+
+        <table>
+            <tr>
+                <th>Mobile No: <input type="text" name="txt1"/></th>
+                <th> <span id="spncont" style="color: red;"></span> </th>
+            </tr>
+            <tr>
+                <th>Email Id: <input type="text" name="txt2"/></th>
+                <th> <span id="spnemail" style="color: red;"></span> </th>
+            </tr>
+            <!-- <tr> -->
+                <th><input type="submit" value="submit"/></th>
+                <th><input type="reset" value="cancel"/></th>
+            <!-- </tr> -->
+        </table>
+
+    </form>
+</body>
+
+</html>

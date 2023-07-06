@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript lecture3</title>
+    <script>
+        function cal(){
+            var a = Number(document.getElementById("num1").value);
+            var b = Number(document.getElementById("num2").value);
+            var c = a + b;
+
+            document.getElementById("total").value=c;
+        }
+    </script>
+
+
+
+</head>
+<body>
+
+    <div>
+        Number1: <input type="text" id="num1" onchange="cal()">
+        Number2: <input type="text" id="num2" onchange="cal()">
+    </div>
+    <br>
+        <div>
+            Total: <input type="text" id="total">
+        </div>
+
+</body>
+</html>

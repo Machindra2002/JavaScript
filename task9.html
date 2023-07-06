@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>array</title>
+    <script>
+        //accending order
+        /*
+        document.write("print array in accending order <br/>")
+        var arr = [2,44,23,8,9,64,21];
+        var temp;
+        for(i = 0; i<arr.length; i++){
+            for(j =0 ; j < arr.length-i-1; j++){
+                if(arr[j]>arr[j+1]){
+                    temp = arr[j];
+                    arr[j] = arr[j+1];
+                    arr[j+1] = temp;
+                }
+            }
+        }
+        document.write(arr);
+        */
+
+        //decending order
+        /*
+        document.write("<br/>print array in decending order <br/>");
+        var arr = [2, 44, 23, 8, 9, 64, 21];
+        var temp;
+        for (i = 0; i <= arr.length; i++) {
+            for (j = 0; j < arr.length - i - 1; j++) {
+                if (arr[j] < arr[j + 1]) {
+                    temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+            }
+        }
+        document.write(arr);
+        */
+
+
+        // var a = [2,44,23,8,9,64,21];
+        // function Decending(a,b){
+        //     return b-a;
+        // }
+        // a.sort(Decending);
+        // document.write(a);
+
+
+
+        //practices --> print array accending order
+        var arr = [12,34,2,5,23,78,32];
+        function acceending(a,b){
+            return a - b;
+        }
+       var sorts =  arr.sort(acceending);
+        document.write(sorts);
+
+        //practices --> print array deccending order
+        var arr = [12,34,2,5,23,78,32];
+      function deccending(a,b){
+        return b - a;
+      }
+      var dec = arr.sort(deccending());
+      document.write(dec);
+      
+
+
+      //reverse the array
+    //   var arr = [10,45,23,56,2,56,64,21,1,34];
+    //     var r = arr.reverse();
+    //     document.write(r);
+    //     document.write("also reverse the array <br>")
+    //     var arr = [10,45,23,56,2,56,64,21,1,34];
+    //      for(i = arr.length; i>=0; i--){
+    //         document.write(arr[i]);
+    //      }
+    
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
